@@ -22,5 +22,5 @@ const students = [
       return sum / len;
   }
 
-//part 4
+//part 
 
