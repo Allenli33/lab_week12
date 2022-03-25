@@ -13,14 +13,22 @@ const students = [
     { name: "Dax", grades: [ 88, 90, 89, 85 ] },
     { name: "Neelix", grades: [ 60, 54, 48, 50 ] }
   ]
-  
-  function average(students) {
-      var i = 0, sum = 0, len = students.grades.length;
-      while (i < len) {
-          sum = sum + students[i++];
-      }
-      return sum / len;
-  }
+ 
+function scholarship(new_list) {
+
+    const studentsScholarship = []
+
+    for (let value of new_list) {
+        value.grades = value.grades.reduce((a,b) => a + b, 0) / value.grades.length; {
+            if (value.grades >= 80) {
+                value.gradeAvg = value.grades;
+                studentsScholarship.push(value)
+            }
+        }
+    }
+    return studentsScholarship
+}
+console.log(scholarship(students))
 
 //part 4
 
