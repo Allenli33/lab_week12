@@ -1,4 +1,5 @@
 // part 2
+
 function Select(){
     const footer = document.querySelector('footer')
     return footer
@@ -13,27 +14,36 @@ const students = [
     { name: "Dax", grades: [ 88, 90, 89, 85 ] },
     { name: "Neelix", grades: [ 60, 54, 48, 50 ] }
   ]
- 
-function scholarship(new_list) {
 
-    const studentsScholarship = []
+const studentsScholarship = []
 
-    for (let value of new_list) {
-        value.grades = value.grades.reduce((a,b) => a + b, 0) / value.grades.length; {
-            if (value.grades >= 80) {
-                value.gradeAvg = value.grades;
-                studentsScholarship.push(value)
-            }
-        }
+
+function CalSum(array) {
+    let total = 0
+    for (let i = 0; i < array.length; i++) {
+    total += array[i];
     }
-    return studentsScholarship
+    return total
 }
-console.log(scholarship(students))
+
+function CalAvg(array) {
+    let Avg = CalSum(array) / array.length
+    return Avg
+}
+
+for (const student of students) {
+    Avg = CalAvg(student.grades)
+    if(Avg >= 80){
+        const Scholarship = {name: student.name, gradeAvg: Avg}
+        studentsScholarship.push(Scholarship)
+        }
+}
+console.log(studentsScholarship)
 
 //part 4
 
-function makeIncognito(){
-    const DarkMode = document.querySelector('div')
-    DarkMode.classList.add('dark-theme')
+function dark_mode(){
+    const dark_theme = document.querySelector(".light-theme")
+    return dark_theme.classList.add("dark-theme")
 }
-console.log(makeIncognito())
+dark_mode()
